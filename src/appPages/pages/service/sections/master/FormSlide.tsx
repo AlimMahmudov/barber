@@ -4,6 +4,7 @@ import { UseFormRegister, UseFormHandleSubmit } from "react-hook-form";
 import { BsFillSendCheckFill } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 import scss from "./Home.module.scss";
+import Link from "next/link";
 
 interface IFormTelegram {
   name: string;
@@ -26,7 +27,6 @@ interface FormSlideProps {
   register: UseFormRegister<IFormTelegram>;
   handleSubmit: UseFormHandleSubmit<IFormTelegram>;
   onSubmit: (data: IFormTelegram) => void;
-  handleDelete: () => void;
 }
 
 const FormSlide: React.FC<FormSlideProps> = ({
@@ -40,7 +40,6 @@ const FormSlide: React.FC<FormSlideProps> = ({
   register,
   handleSubmit,
   onSubmit,
-  handleDelete,
 }) => {
   useEffect(() => {
     console.log("Выбранная дата:", text4);
@@ -84,8 +83,10 @@ const FormSlide: React.FC<FormSlideProps> = ({
             </h1>
             <input type="hidden" {...register("day")} />
             <div className={scss.buttons}>
-              <button type="button" onClick={handleDelete}>
-                <MdClose />
+              <button>
+                <Link href="/">
+                  <MdClose />
+                </Link>
               </button>
               <button type="submit">
                 <BsFillSendCheckFill />

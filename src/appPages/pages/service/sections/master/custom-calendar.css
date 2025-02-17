@@ -9,7 +9,8 @@
   position: relative;
   width: 100%;
   /* max-width: 821px; */
-  background: #000;
+  background: #5a5a5a;
+  border-radius: 10px;
   /* color: #fff; */
   border: none;
   font-family: Arial, sans-serif;

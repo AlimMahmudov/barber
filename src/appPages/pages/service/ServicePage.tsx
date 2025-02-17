@@ -86,18 +86,6 @@ const ServicePage = () => {
     }
   };
 
-  const handleDelete = () => {
-    reset();
-    setText("");
-    setText2("");
-    setText3("");
-    setText4("");
-    setText5("");
-    setText6("");
-    setText7("");
-    setCurrentSlide(0);
-  };
-
   useEffect(() => {
     setValue("master", text);
     setValue("service", text2);
@@ -135,7 +123,6 @@ const ServicePage = () => {
       register={register}
       handleSubmit={handleSubmit}
       onSubmit={onSubmit}
-      handleDelete={handleDelete}
     />,
   ];
 
