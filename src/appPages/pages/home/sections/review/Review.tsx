@@ -1,11 +1,16 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import scss from "./Review.module.scss";
 import img from "@/shared/images/video-img.png";
 import Image from "next/image";
 import { FaRegPlayCircle } from "react-icons/fa";
 import { useLanguageStore } from "@/shared/stores/Language";
+import axios from "axios";
+
+interface VideoInter {
+  youtube: string;
+}
 
 const Review = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -16,32 +21,19 @@ const Review = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentVideo, setCurrentVideo] = useState<string | null>(null);
 
-  const data = [
-    {
-      video: "https://www.youtube.com/embed/jjEGZ6JaDSE",
-      img: img,
-    },
-    {
-      video: "https://www.youtube.com/embed/jjEGZ6JaDSE",
-      img: img,
-    },
-    {
-      video: "https://www.youtube.com/embed/jjEGZ6JaDSE",
-      img: img,
-    },
-    {
-      video: "https://www.youtube.com/embed/jjEGZ6JaDSE",
-      img: img,
-    },
-    {
-      video: "https://www.youtube.com/embed/jjEGZ6JaDSE",
-      img: img,
-    },
-    {
-      video: "https://www.youtube.com/embed/jjEGZ6JaDSE",
-      img: img,
-    },
-  ];
+  const [services, setServices] = useState<VideoInter[]>([]);
+
+  const fetchData = async () => {
+    const { data } = await axios.get(
+      "https://barber-backend-e5nu.onrender.com/video/get-all"
+    );
+    console.log(data);
+    setServices(data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (scrollRef.current) {
@@ -88,10 +80,10 @@ const Review = () => {
             onMouseUp={handleMouseUpOrLeave}
             onMouseLeave={handleMouseUpOrLeave}
           >
-            {data.map((el, index) => (
+            {services.map((el, index) => (
               <div key={index} className={scss.box}>
-                <Image src={el.img} alt="img" />
-                <h2 onClick={() => openModal(el.video)}>
+                <Image src={img} alt="img" />
+                <h2 onClick={() => openModal(el.youtube)}>
                   <FaRegPlayCircle />
                 </h2>
               </div>
