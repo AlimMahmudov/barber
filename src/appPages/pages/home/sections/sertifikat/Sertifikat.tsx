@@ -2,6 +2,7 @@
 import scss from "./Sertifikat.module.scss";
 import { LuPhoneCall } from "react-icons/lu";
 import sertifikats from "@/shared/images/sertifikat.svg";
+
 import Image from "next/image";
 import { useLanguageStore } from "@/shared/stores/Language"; // Подключение хранилища языков
 
