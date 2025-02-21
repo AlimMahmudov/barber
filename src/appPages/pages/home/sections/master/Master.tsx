@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { GoArrowRight } from "react-icons/go";
 import Link from "next/link";
+import { useGetMasterQuery } from "@/redux/api/master";
 
 const Master = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -15,33 +16,7 @@ const Master = () => {
   const startX = useRef(0);
   const scrollLeft = useRef(0);
   const router = useRouter();
-
-  const data = [
-    {
-      id: 1,
-      name: "Макс Корж",
-      barber: "Топ-барбер",
-      img: barber,
-    },
-    {
-      id: 2,
-      name: "Макс Корж",
-      barber: "Топ-барбер",
-      img: barber,
-    },
-    {
-      id: 3,
-      name: "Макс Корж",
-      barber: "Топ-барбер",
-      img: barber,
-    },
-    {
-      id: 4,
-      name: "Макс Корж",
-      barber: "Топ-барбер",
-      img: barber,
-    },
-  ];
+  const { data: masterData } = useGetMasterQuery();
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (scrollRef.current) {
@@ -67,17 +42,18 @@ const Master = () => {
     <div id={scss.Master}>
       <div className="container">
         <div className={scss.master}>
-           <div className={scss.title}>
-           <h1>
-           Команда профессионалов
-          </h1>
-           <Link href={"/master"}>
-           <h2><GoArrowRight /></h2></Link>
-           </div>
+          <div className={scss.title}>
+            <h1>Команда профессионалов</h1>
+            <Link href={"/master"}>
+              <h2>
+                <GoArrowRight />
+              </h2>
+            </Link>
+          </div>
           <h2>
-          Наша команда – это сплоченный коллектив
-            <span>опытных</span>{" "}
-            барберов, каждый из которых – настоящий мастер своего дела.
+            Наша команда – это сплоченный коллектив
+            <span>опытных</span> барберов, каждый из которых – настоящий мастер
+            своего дела.
           </h2>
           <div className={scss.block}>
             <div
@@ -89,18 +65,18 @@ const Master = () => {
               onMouseUp={handleMouseUpOrLeave}
               onMouseLeave={handleMouseUpOrLeave}
             >
-              {data.map((el) => (
+              {masterData?.map((el) => (
                 <div key={el.id} className={scss.box}>
                   <div className={scss.box_text}>
                     <div className={scss.box_h1}>
-                      <h1>{el.name}</h1>
-                      <p>{el.barber}</p>
+                      <h1>{el.human}</h1>
+                      <p>{el.work}</p>
                     </div>
                     <h2>
                       <FaInstagram />
                     </h2>
                   </div>
-                  <Image data-aos="fade-up" src={el.img} alt="" />
+                  <img src={el.photo} alt="img" />
                 </div>
               ))}
             </div>
@@ -109,11 +85,9 @@ const Master = () => {
               className={scss.want}
             >
               <div className={scss.want_box}>
-                <h1>
-                Хочешь к нам в команду?
-                </h1>
+                <h1>Хочешь к нам в команду?</h1>
                 <p>
-                Присылай резюме
+                  Присылай резюме
                   <span>
                     <FaArrowRight />
                   </span>

@@ -21,25 +21,19 @@ const Map = () => {
               <Image src={logo} alt="" />
               <div className={scss.logo_text}>
                 <h1>Bro Barber</h1>
-                <p>
-                #1 Барбер в Бишкеке
-                </p>
+                <p>#1 Барбер в Бишкеке</p>
               </div>
             </div>
-            <button onClick={() => router.push("/record")}>
-            Записаться
-            </button>
+            <button onClick={() => router.push("/about")}>О нас</button>
           </div>
 
           <div className={scss.map_text_mob}>
-            <h1>
-            записывайтесь мы всегда вас ждем
-            </h1>
+            <h1>записывайтесь мы всегда вас ждем</h1>
             <p>
               <LuPhoneCall /> +996 708 000 000
             </p>
             <p>
-            Кыргызстан, Бишкек, улица Лучшая 35 Ежедневно с 08:00 до 20:00
+              Кыргызстан, Бишкек, улица Лучшая 35 Ежедневно с 08:00 до 20:00
             </p>
             <div className={scss.icons}>
               <h2>
@@ -61,14 +55,12 @@ const Map = () => {
             ></iframe>
 
             <div className={scss.map_text}>
-              <h1>
-              записывайтесь мы всегда вас ждем
-              </h1>
+              <h1>записывайтесь мы всегда вас ждем</h1>
               <p>
                 <LuPhoneCall /> +996 708 000 000
               </p>
               <p>
-              Кыргызстан, Бишкек, улица Лучшая 35 Ежедневно с 08:00 до 20:00
+                Кыргызстан, Бишкек, улица Лучшая 35 Ежедневно с 08:00 до 20:00
               </p>
               <div className={scss.icons}>
                 <h2>
