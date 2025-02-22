@@ -80,10 +80,7 @@ const Master = () => {
                 </div>
               ))}
             </div>
-            <div
-              onClick={() => router.push("/newMaster")}
-              className={scss.want}
-            >
+            <div onClick={() => router.push("/wellcome")} className={scss.want}>
               <div className={scss.want_box}>
                 <h1>Хочешь к нам в команду?</h1>
                 <p>
