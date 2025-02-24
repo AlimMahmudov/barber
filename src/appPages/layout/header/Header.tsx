@@ -22,7 +22,7 @@ const Header = () => {
   const links = [
     {
       name: translate("Стрижки", "Чач кыркуу", "Haircuts"),
-      link: "/record/",
+      link: "/service",
     },
     {
       name: translate("Награды", "Сыйлыктар", "Awards"),
