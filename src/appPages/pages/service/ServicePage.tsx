@@ -154,10 +154,18 @@ const ServicePage = () => {
         <div className={scss.home}>
           <div className={scss.blog}>{components[currentSlide]}</div>
           <div className={scss.buttons}>
-            <button onClick={prevSlide}>
+            <button
+              onClick={prevSlide}
+              disabled={currentSlide === 0}
+              className={currentSlide === 0 ? scss.disabledButton : ""}
+            >
               <GrFormPreviousLink /> Предыдущий
             </button>
-            <button onClick={nextSlide}>
+
+            <button
+              onClick={nextSlide}
+              disabled={currentSlide === components.length - 1}
+            >
               Следующий <GrFormNextLink />
             </button>
           </div>

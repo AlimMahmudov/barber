@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import scss from "./Home.module.scss";
 
 interface WatchInter {
@@ -12,6 +13,8 @@ interface HomeProps {
 }
 
 const Time: React.FC<HomeProps> = ({ watchData, setText3 }) => {
+  const [selectedId, setSelectedId] = useState<number | null>(null);
+
   return (
     <div id={scss.Home}>
       <div className="container">
@@ -19,9 +22,17 @@ const Time: React.FC<HomeProps> = ({ watchData, setText3 }) => {
           <div className={scss.zapros}>
             {watchData.map((el) => (
               <div
-                onClick={() => setText3(el.oclock)}
                 key={el.id}
-                className={scss.watch}
+                onClick={() => {
+                  setText3(el.oclock);
+                  setSelectedId(el.id);
+                }}
+                className={`${scss.watch} ${
+                  selectedId === el.id ? scss.selected : ""
+                }`}
+                style={{
+                  backgroundColor: selectedId === el.id ? "#ffa600" : "#fff",
+                }}
               >
                 <h1>{el.oclock}</h1>
               </div>

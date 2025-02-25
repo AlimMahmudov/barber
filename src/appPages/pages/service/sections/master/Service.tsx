@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import scss from "./Home.module.scss";
 
 interface ShaveInter {
@@ -14,6 +15,8 @@ interface HomeProps {
 }
 
 const Service: React.FC<HomeProps> = ({ shaveData, setText2 }) => {
+  const [selectedId, setSelectedId] = useState<number | null>(null);
+
   return (
     <div id={scss.Home}>
       <div className="container">
@@ -21,9 +24,17 @@ const Service: React.FC<HomeProps> = ({ shaveData, setText2 }) => {
           <div className={scss.zapros}>
             {shaveData.map((el) => (
               <div
-                onClick={() => setText2(el.title)}
                 key={el.id}
-                className={scss.card}
+                onClick={() => {
+                  setText2(el.title);
+                  setSelectedId(el.id);
+                }}
+                className={`${scss.card} ${
+                  selectedId === el.id ? scss.selected : ""
+                }`}
+                style={{
+                  backgroundColor: selectedId === el.id ? "#ffa600" : "#fff",
+                }}
               >
                 <img src={el.image} alt={el.title} />
                 <h1>{el.title}</h1>
