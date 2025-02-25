@@ -1,0 +1,71 @@
+.AboutComponent {
+	padding: 100px 0;
+	background-color: #1a1a1a;
+
+	.content {
+		color: white;
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+
+		h2 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+
+		h3 {
+			font-size: 28px;
+			margin: 40px 0 15px;
+			color: #ffcc00; // Фирменный цвет
+		}
+
+		p {
+			font-size: 18px;
+			line-height: 1.6;
+			margin-bottom: 20px;
+		}
+
+		.contact {
+			display: flex;
+			width: 100%;
+			flex-direction: column;
+      gap: 10px;
+			h4 {
+				font-size: 18px;
+				line-height: 1.6;
+				text-decoration: none;
+				color: white;
+
+
+			}
+		}
+
+		.advantages,
+		.services {
+			list-style: none;
+			padding: 0;
+			text-align: left;
+			display: inline-block;
+
+			li {
+				font-size: 18px;
+				line-height: 1.4;
+				margin-bottom: 12px;
+				position: relative;
+				padding-left: 30px;
+
+				&::before {
+					content: "✔";
+					position: absolute;
+					left: 0;
+					color: #ffcc00;
+					font-size: 22px;
+				}
+			}
+		}
+
+		.services li::before {
+			content: "✂";
+		}
+	}
+}

@@ -1,7 +1,7 @@
 .header {
   position: fixed;
   width: 100%;
-  padding-block: 10px;
+  padding: 10px 0;
 
   background: rgba(31, 31, 31, 0);
   backdrop-filter: blur(10px);
@@ -21,7 +21,7 @@
       gap: 10px;
       button {
         background: #000000bd;
-        padding: 10px 20px;
+        padding: 7px 20px;
         border-radius: 20px;
         color: #ffffff;
         border: solid #dd9700 3px;
@@ -29,7 +29,7 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-        font-size: 22px;
+        font-size: 20px;
         transition: all 0.3s;
 
         &:hover {
@@ -41,12 +41,13 @@
       }
       select {
         background: #000000bd;
-        width: 50px;
-        height: 50px;
+        // width: 100px;
+        // height: 50px;
+        padding: 7px 20px;
         border-radius: 10px;
         color: #ffffff;
         border: solid #dd9700 3px;
-        font-size: 22px;
+        font-size: 20px;
         outline: none;
         transition: all 0.3s;
 
@@ -58,7 +59,7 @@
         }
 
         option {
-          text-align: center;
+          text-align: start;
           background: #000000;
           color: #ffffff;
           font-size: 16px;
@@ -85,6 +86,8 @@
       height: 74px;
     }
 
+
+
     @media (max-width: 500px) {
       img {
         width: 58px;
@@ -95,16 +98,16 @@
     .nav {
       color: white;
       display: flex;
-      gap: 60px;
+      gap: 40px;
 
       a {
         color: rgb(161, 161, 161);
         text-decoration: none;
         cursor: pointer;
         color: white;
-        font-size: 20px;
+        font-size: 18px;
         text-transform: uppercase;
-        font-family: "Bebas Neue";
+        font-family: "arial";
       }
     }
     @media (max-width: 500px) {

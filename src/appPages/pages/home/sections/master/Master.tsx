@@ -7,6 +7,8 @@ import barber from "@/shared/images/barber.svg";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useLanguageStore } from "@/shared/stores/Language";
+import { GoArrowRight } from "react-icons/go";
+import Link from "next/link";
 
 const Master = () => {
   const { translate } = useLanguageStore();
@@ -67,13 +69,17 @@ const Master = () => {
     <div id={scss.Master}>
       <div className="container">
         <div className={scss.master}>
-          <h1>
+           <div className={scss.title}>
+           <h1>
             {translate(
               "Команда профессионалов",
               "Кесипкөй команда",
               "Team of professionals"
             )}
           </h1>
+           <Link href={"/master"}>
+           <h2><GoArrowRight /></h2></Link>
+           </div>
           <h2>
             {translate(
               "Наша команда – это сплоченный коллектив ",

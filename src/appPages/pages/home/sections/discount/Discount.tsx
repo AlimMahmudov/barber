@@ -14,9 +14,9 @@ const Discount = () => {
           <div className={scss.text}>
             <h1>
               {translate(
-                "Только до конца ноября",
-                "Ноябрь айынын аягына чейин гана",
-                "Only until the end of November"
+                "Только до конца Марта",
+                "Март айынын аягына чейин гана",
+                "Only until the end of March"
               )}
             </h1>
             <h3>

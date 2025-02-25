@@ -15,7 +15,7 @@
       justify-content: space-between;
 
       h1 {
-        font-family: "Bebas Neue";
+        font-family: "Arial",sans-serif;
         font-size: 50px;
         font-weight: 700;
         line-height: 50px;
@@ -29,7 +29,7 @@
         padding: 10px;
 
         button {
-          font-family: Arial;
+          font-family: "Arial",sans-serif;
           font-size: 24px;
           font-weight: 700;
           line-height: 27.54px;
@@ -95,7 +95,7 @@
         flex-direction: column  ;
   
         h1 {
-          font-family: "Bebas Neue";
+          font-family: "Arial",sans-serif;
           font-size: 40px;
           font-weight: 700;
           line-height: 50px;
@@ -147,21 +147,25 @@
           .num {
             display: flex;
             gap: 20px;
+            width: 100%;
 
             h1 {
-              font-size: 20px;
+              font-size: 18px;
+              font-family: "Arial",sans-serif;
             }
           }
           .min {
             display: flex;
-            gap: 5px;
+            gap: 0px;
             flex-direction: column;
 
-            width: 30%;
-            justify-content: space-between;
+            width: 120px;
+            justify-content: start;
+            align-items: end;
 
             h1 {
-              font-size: 20px;
+              font-size: 18px;
+              font-family: "Arial",sans-serif;
             }
           }
         }
