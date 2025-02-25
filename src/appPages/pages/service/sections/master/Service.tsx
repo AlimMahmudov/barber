@@ -30,7 +30,7 @@ const Service: React.FC<HomeProps> = ({ shaveData, setText2 }) => {
                   setText2(el.title);
                   setSelectedId(el.id);
                 }}
-                className={`${scss.card} ${
+                className={`${scss.card2} ${
                   selectedId === el.id ? scss.selected : ""
                 }`}
                 style={{

@@ -147,14 +147,14 @@ const ServicePage = () => {
               disabled={currentSlide === 0}
               className={currentSlide === 0 ? scss.disabledButton : ""}
             >
-              <GrFormPreviousLink /> Предыдущий
+              <GrFormPreviousLink />
             </button>
 
             <button
               onClick={nextSlide}
               disabled={currentSlide === components.length - 1}
             >
-              Следующий <GrFormNextLink />
+              <GrFormNextLink />
             </button>
           </div>
         </div>
