@@ -16,6 +16,7 @@ import {
   useGetShaveQuery,
   useGetWatchQuery,
 } from "@/redux/api/master";
+import Map from "../home/sections/map/Map";
 
 interface IFormTelegram {
   name: string;
@@ -171,6 +172,7 @@ const ServicePage = () => {
           </div>
         </div>
       </div>
+      <Map />
     </div>
   );
 };
