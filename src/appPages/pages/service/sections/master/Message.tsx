@@ -11,6 +11,7 @@ const Message: React.FC<MessageProps> = ({ setText5, setText6, setText7 }) => {
     <div id={scss.Home}>
       <div className="container">
         <div className={scss.message}>
+          <h1 className={scss.title}>Введите ваши данные</h1>
           <div className={scss.message_form}>
             <div className={scss.inputs}>
               <h1>Имя *</h1>

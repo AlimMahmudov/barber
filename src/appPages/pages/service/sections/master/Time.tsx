@@ -19,6 +19,7 @@ const Time: React.FC<HomeProps> = ({ watchData, setText3 }) => {
     <div id={scss.Home}>
       <div className="container">
         <div className={scss.home}>
+          <h1 className={scss.title}>Выберите время</h1>
           <div className={scss.zapros}>
             {watchData.map((el) => (
               <div

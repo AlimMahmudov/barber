@@ -21,6 +21,7 @@ const Service: React.FC<HomeProps> = ({ shaveData, setText2 }) => {
     <div id={scss.Home}>
       <div className="container">
         <div className={scss.home}>
+          <h1 className={scss.title}>Выберите стрижку</h1>
           <div className={scss.zapros}>
             {shaveData.map((el) => (
               <div

@@ -52,6 +52,7 @@ const FormSlide: React.FC<FormSlideProps> = ({
     <div id={scss.Home}>
       <div className="container">
         <div className={scss.forms}>
+          <h1 className={scss.title}>Записаться</h1>
           <form className={scss.form} onSubmit={handleSubmit(onSubmit)}>
             <h1>
               <span>дата: </span>

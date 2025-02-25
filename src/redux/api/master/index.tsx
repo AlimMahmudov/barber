@@ -11,7 +11,7 @@ const api = index.injectEndpoints({
     }),
     getShave: build.query<SHAVE.GetResponse, SHAVE.GetRequest>({
       query: () => ({
-        url: "/shave",
+        url: "/shave/get-all",
         method: "GET",
       }),
       providesTags: ["shave"],

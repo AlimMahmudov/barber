@@ -21,6 +21,7 @@ const Master: React.FC<MasterProps> = ({ masterData, setText }) => {
     <div id={scss.Home}>
       <div className="container">
         <div className={scss.home}>
+          <h1 className={scss.title}>Выберите специалиста</h1>
           <div className={scss.zapros}>
             {masterData.map((el) => (
               <div
