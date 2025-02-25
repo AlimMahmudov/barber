@@ -6,12 +6,10 @@ import { FaInstagram } from "react-icons/fa";
 import barber from "@/shared/images/barber.svg";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useLanguageStore } from "@/shared/stores/Language";
 import { GoArrowRight } from "react-icons/go";
 import Link from "next/link";
 
 const Master = () => {
-  const { translate } = useLanguageStore();
   const scrollRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -21,26 +19,26 @@ const Master = () => {
   const data = [
     {
       id: 1,
-      name: translate("Макс Корж", "Макс Корж", "Max Korzh"),
-      barber: translate("Топ-барбер", "Топ-барбер", "Top barber"),
+      name: "Макс Корж",
+      barber: "Топ-барбер",
       img: barber,
     },
     {
       id: 2,
-      name: translate("Макс Корж", "Макс Корж", "Max Korzh"),
-      barber: translate("Топ-барбер", "Топ-барбер", "Top barber"),
+      name: "Макс Корж",
+      barber: "Топ-барбер",
       img: barber,
     },
     {
       id: 3,
-      name: translate("Макс Корж", "Макс Корж", "Max Korzh"),
-      barber: translate("Топ-барбер", "Топ-барбер", "Top barber"),
+      name: "Макс Корж",
+      barber: "Топ-барбер",
       img: barber,
     },
     {
       id: 4,
-      name: translate("Макс Корж", "Макс Корж", "Max Korzh"),
-      barber: translate("Топ-барбер", "Топ-барбер", "Top barber"),
+      name: "Макс Корж",
+      barber: "Топ-барбер",
       img: barber,
     },
   ];
@@ -71,27 +69,15 @@ const Master = () => {
         <div className={scss.master}>
            <div className={scss.title}>
            <h1>
-            {translate(
-              "Команда профессионалов",
-              "Кесипкөй команда",
-              "Team of professionals"
-            )}
+           Команда профессионалов
           </h1>
            <Link href={"/master"}>
            <h2><GoArrowRight /></h2></Link>
            </div>
           <h2>
-            {translate(
-              "Наша команда – это сплоченный коллектив ",
-              "Биздин команда бул ынтымактуу жамаат ",
-              "Our team is a close-knit group of "
-            )}
-            <span>{translate("опытных", "тажрыйбалуу", "experienced")}</span>{" "}
-            {translate(
-              "барберов, каждый из которых – настоящий мастер своего дела.",
-              "барберлер, ар бири өз ишинин чыныгы чебери.",
-              "barbers, each of whom is a true master of their craft."
-            )}
+          Наша команда – это сплоченный коллектив
+            <span>опытных</span>{" "}
+            барберов, каждый из которых – настоящий мастер своего дела.
           </h2>
           <div className={scss.block}>
             <div
@@ -124,18 +110,10 @@ const Master = () => {
             >
               <div className={scss.want_box}>
                 <h1>
-                  {translate(
-                    "Хочешь к нам в команду?",
-                    "Биздин командага кошулгуң келеби?",
-                    "Want to join our team?"
-                  )}
+                Хочешь к нам в команду?
                 </h1>
                 <p>
-                  {translate(
-                    "Присылай резюме",
-                    "Резюмеңизди жибериңиз",
-                    "Send your resume"
-                  )}
+                Присылай резюме
                   <span>
                     <FaArrowRight />
                   </span>

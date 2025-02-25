@@ -6,34 +6,29 @@ import Link from "next/link";
 import logo from "@/shared/images/logo.svg";
 import { LuPhoneCall } from "react-icons/lu";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useLanguageStore } from "@/shared/stores/Language";
 // import { PHONE_NUMBER_WHATSAPP } from "@/constants/admin";
 
 const Header = () => {
-	const { translate, setLanguage } = useLanguageStore();
-
-	const handleLanguage = (lang: "ru" | "kg" | "en") => {
-		setLanguage(lang);
-	};
+ 
 
 	const [isMobile, setIsMobile] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
 
 	const links = [
 		{
-			name: translate("Главная", "Башкы", "Home"),
+			name: "Главная",
 			link: "/",
 		},
 		{
-			name: translate("О нас", "Биз тууралуу", "About"),
+			name: "О нас",
 			link: "/about",
 		},
 		{
-			name: translate("Мастера", "Мастерлер", "Masters"),
+			name:"Мастера",
 			link: "/master",
 		},
 		{
-			name: translate("Записаться", "жазылуу", "Book"),
+			name: "Записаться",
 			link: "/service",
 		},
 	];
@@ -72,20 +67,12 @@ const Header = () => {
 							<BurgerMenu
 								links={links}
 								isOpen={isOpen}
-								handleLanguage={handleLanguage} // Передаем handleLanguage
 							/>
 						</>
 					) : (
 						<>
 							<div className={scss.buutons}>
-								<select
-									onChange={(e) =>
-										handleLanguage(e.target.value as "ru" | "kg" | "en")
-									}>
-									<option value="ru">RU</option>
-									<option value="kg">KG</option>
-									<option value="en">EN</option>
-								</select>
+								 
 								{/* <Link href={`tel:${PHONE_NUMBER_WHATSAPP}`} target={"_blank"}> */}
 								<button>
 									<LuPhoneCall /> +996 708 000 000

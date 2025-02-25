@@ -7,11 +7,9 @@ import { LuPhoneCall } from "react-icons/lu";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { SlSocialTwitter } from "react-icons/sl";
-import { useLanguageStore } from "@/shared/stores/Language"; // Импортируем useLanguageStore для использования translate
 import { useRouter } from "next/navigation";
 
 const Map = () => {
-  const { translate } = useLanguageStore();
   const router = useRouter();
 
   return (
@@ -22,38 +20,26 @@ const Map = () => {
             <div className={scss.logo}>
               <Image src={logo} alt="" />
               <div className={scss.logo_text}>
-                <h1>{translate("Bro Barber", "Bro Barber", "Bro Barber")}</h1>
+                <h1>Bro Barber</h1>
                 <p>
-                  {translate(
-                    "#1 Барбер в Бишкеке",
-                    "#1 Барбер Бишкекте",
-                    "#1 Barber in Bishkek"
-                  )}
+                #1 Барбер в Бишкеке
                 </p>
               </div>
             </div>
             <button onClick={() => router.push("/record")}>
-              {translate("Записаться", "Катталыңыз", "Sign Up")}
+            Записаться
             </button>
           </div>
 
           <div className={scss.map_text_mob}>
             <h1>
-              {translate(
-                "записывайтесь мы всегда вас ждем",
-                "Катталуу үчүн жазылыңыз, биз дайыма сизди күтөбүз",
-                "Book your appointment, we are always waiting for you"
-              )}
+            записывайтесь мы всегда вас ждем
             </h1>
             <p>
               <LuPhoneCall /> +996 708 000 000
             </p>
             <p>
-              {translate(
-                "Кыргызстан, Бишкек, улица Лучшая 35 Ежедневно с 08:00 до 20:00",
-                "Кыргызстан, Бишкек, Лучшая көчөсү 35, күн сайын 08:00дөн 20:00гө чейин",
-                "Kyrgyzstan, Bishkek, Luchshaya Street 35, Daily from 08:00 to 20:00"
-              )}
+            Кыргызстан, Бишкек, улица Лучшая 35 Ежедневно с 08:00 до 20:00
             </p>
             <div className={scss.icons}>
               <h2>
@@ -76,21 +62,13 @@ const Map = () => {
 
             <div className={scss.map_text}>
               <h1>
-                {translate(
-                  "записывайтесь мы всегда вас ждем",
-                  "Катталуу үчүн жазылыңыз, биз дайыма сизди күтөбүз",
-                  "Book your appointment, we are always waiting for you"
-                )}
+              записывайтесь мы всегда вас ждем
               </h1>
               <p>
                 <LuPhoneCall /> +996 708 000 000
               </p>
               <p>
-                {translate(
-                  "Кыргызстан, Бишкек, улица Лучшая 35 Ежедневно с 08:00 до 20:00",
-                  "Кыргызстан, Бишкек, Лучшая көчөсү 35, күн сайын 08:00дөн 20:00гө чейин",
-                  "Kyrgyzstan, Bishkek, Luchshaya Street 35, Daily from 08:00 to 20:00"
-                )}
+              Кыргызстан, Бишкек, улица Лучшая 35 Ежедневно с 08:00 до 20:00
               </p>
               <div className={scss.icons}>
                 <h2>

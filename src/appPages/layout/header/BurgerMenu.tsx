@@ -10,10 +10,9 @@ interface LinksType {
 interface BurgerMenuProps {
   links: LinksType[];
   isOpen: boolean;
-  handleLanguage: (lang: "ru" | "kg" | "en") => void; // Добавляем handleLanguage
 }
 
-const BurgerMenu: FC<BurgerMenuProps> = ({ links, isOpen, handleLanguage }) => {
+const BurgerMenu: FC<BurgerMenuProps> = ({ links, isOpen }) => {
   return (
     <div
       className={
@@ -27,17 +26,7 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ links, isOpen, handleLanguage }) => {
               {item.name}
             </Link>
           ))}
-          <div className={scss.language}>
-            <select
-              onChange={(e) =>
-                handleLanguage(e.target.value as "ru" | "kg" | "en")
-              }
-            >
-              <option value="ru">RU</option>
-              <option value="kg">KG</option>
-              <option value="en">EN</option>
-            </select>
-          </div>
+          
         </div>
       </div>
     </div>

@@ -6,11 +6,9 @@ import barber from "@/shared/images/hero_barber.svg";
 import barber2 from "@/shared/images/hero_barber2.svg";
 import barber3 from "@/shared/images/hero_barber3.svg";
 import { useRouter } from "next/navigation";
-import { useLanguageStore } from "@/shared/stores/Language";
 
 const Hero = () => {
   const router = useRouter();
-  const { translate } = useLanguageStore();
 
   return (
     <>
@@ -19,44 +17,28 @@ const Hero = () => {
           <div className={scss.hero}>
             <div data-aos="fade-up" className={scss.hero_text}>
               <h1>
-                {translate("ИДЕАЛЬНАЯ", "ИДЕАЛДУУ", "PERFECT")} <br />{" "}
-                {translate("СТРИЖКА", "ЧАЧ КЫРКУУ", "HAIRCUT")}
+              ИДЕАЛЬНАЯ <br />{" "}
+              СТРИЖКА
               </h1>
               <h2>
-                {translate("в один клик!", "бир басым менен!", "in one click!")}
+              в один клик!
               </h2>
               <p>
-                {translate(
-                  "Запишись онлайн и наслаждайся комфортом и стилем! Наши барберы создадут образ, который покорит всех!",
-                  "Онлайн жазылыңыз жана жайлуулук менен стилден ырахат алыңыз! Биздин барберлер сизди таң калтыра турган образ түзүшөт!",
-                  "Book online and enjoy comfort and style! Our barbers will create a look that impresses everyone!"
-                )}
+              Запишись онлайн и наслаждайся комфортом и стилем! Наши барберы создадут образ, который покорит всех!
               </p>
               <div className={scss.buttons}>
                 <button onClick={() => router.push("/service")}>
-                  {translate(
-                    "Записаться on-line",
-                    "Онлайн жазылуу",
-                    "Book on-line"
-                  )}
+                Записаться on-line
                 </button>
                 <h4>
-                  {translate(
-                    "Забудь о долгом ожидании!",
-                    "Көпкө күтүүнү унут!",
-                    "Forget about long waits!"
-                  )}
+                Забудь о долгом ожидании!
                 </h4>
               </div>
             </div>
             <div data-aos="fade-up" className={scss.hero_img}>
               <Image src={hero_logo} alt="" />
               <h4>
-                {translate(
-                  "Забудь о долгом ожидании!",
-                  "Көпкө күтүүнү унут!",
-                  "Forget about long waits!"
-                )}
+              Забудь о долгом ожидании!
               </h4>
             </div>
           </div>
@@ -69,11 +51,7 @@ const Hero = () => {
               <div className={scss.text}>
                 <h1>98%</h1>
                 <p>
-                  {translate(
-                    "Клиентов довольны результатом работы",
-                    "Кардарлар жумуштун жыйынтыгына ыраазы",
-                    "Customers are satisfied with the results"
-                  )}
+                Клиентов довольны результатом работы
                 </p>
               </div>
               <Image src={barber} alt="" />
@@ -81,13 +59,9 @@ const Hero = () => {
             <hr />
             <div className={scss.box}>
               <div className={scss.text}>
-                <h1>14+</h1>
+                <h1>5+</h1>
                 <p>
-                  {translate(
-                    "Лет на рынке мужских стрижек",
-                    "Эркектердин чач кыркуу рыногунда 14 жылдан ашык",
-                    "Years in the men's haircut market"
-                  )}
+                Лет на рынке мужских стрижек
                 </p>
               </div>
               <Image src={barber2} alt="" />
@@ -95,13 +69,9 @@ const Hero = () => {
             <hr />
             <div className={scss.box}>
               <div className={scss.text}>
-                <h1>35+</h1>
+                <h1>15+</h1>
                 <p>
-                  {translate(
-                    "Барбершопов в Кыргызстане",
-                    "Кыргызстанда 35тен ашык барбершоп",
-                    "Barbershops in Kyrgyzstan"
-                  )}
+                Барбершопов в Кыргызстане
                 </p>
               </div>
               <Image src={barber3} alt="" />

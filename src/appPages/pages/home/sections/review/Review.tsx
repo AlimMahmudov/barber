@@ -5,7 +5,6 @@ import scss from "./Review.module.scss";
 import img from "@/shared/images/video-img.png";
 import Image from "next/image";
 import { FaRegPlayCircle } from "react-icons/fa";
-import { useLanguageStore } from "@/shared/stores/Language";
 import axios from "axios";
 
 interface VideoInter {
@@ -64,13 +63,13 @@ const Review = () => {
     setIsModalOpen(false);
     setCurrentVideo(null);
   };
-  const { translate } = useLanguageStore();
+   
 
   return (
     <div id={scss.Review}>
       <div className="container">
         <div className={scss.review}>
-          <h1>{translate("ВИДЕО", "ВИДЕОЛОР", "VIDEOS")}</h1>
+          <h1>ВИДЕО</h1>
           <div
             className={scss.review_scroll}
             data-aos="fade-up"
