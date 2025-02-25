@@ -1,4 +1,3 @@
-import Link from "next/link";
 import scss from "./AboutComponent.module.scss";
 
 const AboutComponent = () => {
