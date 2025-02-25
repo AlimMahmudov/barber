@@ -27,7 +27,7 @@ const Service: React.FC<HomeProps> = ({ shaveData, setText2 }) => {
               >
                 <img src={el.image} alt={el.title} />
                 <h1>{el.title}</h1>
-                <p>{el.price}</p>
+                <p>{el.price} сом</p>
               </div>
             ))}
           </div>

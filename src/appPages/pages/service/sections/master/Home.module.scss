@@ -9,17 +9,18 @@
       flex-wrap: wrap;
       gap: 10px;
       .card {
-        background: #525252;
+        background: #ffffff;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-align: center;
         padding: 5px;
         cursor: pointer;
         width: 200px;
         height: 200px;
         border-radius: 5px;
-        gap: 5px;
+        gap: 10px;
 
         h1 {
           font-size: 20px;
@@ -30,7 +31,7 @@
       }
 
       .watch {
-        background: #525252;
+        background: #ffffff;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -52,18 +53,75 @@
     }
   }
 
-  .inputs {
+  .message {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    width: 100%;
 
-    input {
-      width: 260px;
-      height: 40px;
-      padding: 5px;
-      font-size: 20px;
-      outline: none;
+    .message_form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+
+      .inputs {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        h1 {
+          color: #fff;
+          font-size: 20px;
+        }
+        input {
+          width: 100%;
+          height: 50px;
+          padding: 5px;
+          font-size: 20px;
+          outline: none;
+          border-radius: 5px;
+          border: solid 2px #fff;
+          background: none;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .forms {
+    display: flex;
+    justify-content: center;
+
+    .form {
+      padding: 20px;
+      width: 70%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      h1 {
+        width: 100%;
+        border-bottom: solid 2px #fff;
+        color: #fff;
+        font-size: 24px;
+      }
+      .buttons {
+        display: flex;
+        gap: 50px;
+        button {
+          display: flex;
+          align-items: center;
+          padding: 5px 20px;
+          border-radius: 5px;
+          border: none;
+          font-size: 30px;
+          font-weight: 800;
+          background: #ffa600;
+        }
+      }
     }
   }
 }

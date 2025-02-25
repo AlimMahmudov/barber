@@ -1,18 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Master from "./sections/master/Master";
 import axios from "axios";
+import { useForm, SubmitHandler } from "react-hook-form";
+import Master from "./sections/master/Master";
 import Service from "./sections/master/Service";
 import Time from "./sections/master/Time";
 import MyCustomCalendar from "./sections/master/Calendar";
 import Message from "./sections/master/Message";
-import { useForm, SubmitHandler } from "react-hook-form";
+import FormSlide from "./sections/master/FormSlide";
 import scss from "./sections/HomePage.module.scss";
 
-import { BsFillSendCheckFill } from "react-icons/bs";
-import { MdClose } from "react-icons/md";
-import { GrFormPreviousLink } from "react-icons/gr";
-import { GrFormNextLink } from "react-icons/gr";
+import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr";
 import {
   useGetMasterQuery,
   useGetShaveQuery,
@@ -81,7 +79,7 @@ const ServicePage = () => {
       setText5("");
       setText6("");
       setText7("");
-      setCurrentSlide(0); // Сброс карусели на первый слайд
+      setCurrentSlide(0);
     } catch (error) {
       console.error("Ошибка при отправке сообщения:", error);
     }
@@ -96,7 +94,7 @@ const ServicePage = () => {
     setText5("");
     setText6("");
     setText7("");
-    setCurrentSlide(0); // Сброс карусели на первый слайд
+    setCurrentSlide(0);
   };
 
   useEffect(() => {
@@ -109,6 +107,10 @@ const ServicePage = () => {
     setValue("phone", text7);
   }, [text, text2, text3, text4, text5, text6, text7, setValue]);
 
+  useEffect(() => {
+    console.log("Выбранная дата:", text4);
+  }, [text4]);
+
   const components = [
     <MyCustomCalendar key="calendar" setText4={setText4} />,
     <Time key="time" watchData={watchData ?? []} setText3={setText3} />,
@@ -119,6 +121,20 @@ const ServicePage = () => {
       setText5={setText5}
       setText6={setText6}
       setText7={setText7}
+    />,
+    <FormSlide
+      key="form"
+      text={text}
+      text2={text2}
+      text3={text3}
+      text4={text4}
+      text5={text5}
+      text6={text6}
+      text7={text7}
+      register={register}
+      handleSubmit={handleSubmit}
+      onSubmit={onSubmit}
+      handleDelete={handleDelete}
     />,
   ];
 
@@ -136,39 +152,15 @@ const ServicePage = () => {
     <div id={scss.Home}>
       <div className="container">
         <div className={scss.home}>
+          <div className={scss.blog}>{components[currentSlide]}</div>
           <div className={scss.buttons}>
             <button onClick={prevSlide}>
-              <GrFormPreviousLink /> Следующий
+              <GrFormPreviousLink /> Предыдущий
             </button>
             <button onClick={nextSlide}>
-              Предедуший <GrFormNextLink />
+              Следующий <GrFormNextLink />
             </button>
           </div>
-          <div className={scss.blog}>{components[currentSlide]}</div>
-          <form className={scss.form} onSubmit={handleSubmit(onSubmit)}>
-            <h1>{text4 || "Дата не выбрано"}</h1>
-            <h1>{text3 || "Время не выбрано"}</h1>
-            <h1>{text2 || "Стрижка не выбрано"}</h1>
-            <h1>{text || "Мастер не выбран"}</h1>
-            <h1>{text5 || "Нет имени"}</h1>
-            <h1>{text6 || "Нет Email"}</h1>
-            <h1>{text7 || "Нет номера"}</h1>
-            <input type="hidden" {...register("day")} />
-            <input type="hidden" {...register("time")} />
-            <input type="hidden" {...register("service")} />
-            <input type="hidden" {...register("master")} />
-            <input type="hidden" {...register("name")} />
-            <input type="hidden" {...register("email")} />
-            <input type="hidden" {...register("phone")} />
-            <div className={scss.buttons}>
-              <button type="button" onClick={handleDelete}>
-                <MdClose />
-              </button>
-              <button type="submit">
-                <BsFillSendCheckFill />
-              </button>
-            </div>
-          </form>
         </div>
       </div>
     </div>
