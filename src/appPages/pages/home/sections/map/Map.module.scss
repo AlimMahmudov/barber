@@ -21,14 +21,14 @@
 
         .logo_text {
           h1 {
-            font-family: "Arial",sans-serif;
+            font-family: "Arial", sans-serif;
             font-size: 41.33px;
             font-weight: 400;
             line-height: 49.59px;
             color: #ffffff;
           }
           p {
-            font-family: "Arial",sans-serif;
+            font-family: "Arial", sans-serif;
             font-size: 21.52px;
             font-weight: 400;
             line-height: 25.83px;
@@ -67,7 +67,7 @@
       gap: 25px;
 
       h1 {
-        font-family: "Arial",sans-serif;
+        font-family: "Arial", sans-serif;
         font-size: 30px;
         font-weight: 700;
         line-height: 30px;
@@ -76,7 +76,7 @@
       }
 
       p {
-        font-family: "Arial",sans-serif;
+        font-family: "Arial", sans-serif;
         font-size: 14px;
         font-weight: 400;
         line-height: 20px;
@@ -112,7 +112,7 @@
         filter: grayscale(100%) brightness(30%); /* Затемнение карты */
       }
       .map_text {
-        z-index: 1;
+        z-index: 10;
         width: 420px;
         gap: 0px;
         border-radius: 20px;
@@ -127,7 +127,7 @@
         gap: 25px;
 
         h1 {
-          font-family: "Arial",sans-serif;
+          font-family: "Arial", sans-serif;
           font-size: 30px;
           font-weight: 700;
           line-height: 30px;
@@ -183,7 +183,7 @@
 
           .logo_text {
             h1 {
-              font-family: "Arial",sans-serif;
+              font-family: "Arial", sans-serif;
               font-size: 31.33px;
               font-weight: 400;
               line-height: 49.59px;
@@ -222,7 +222,7 @@
         gap: 25px;
 
         h1 {
-          font-family: "Arial",sans-serif;
+          font-family: "Arial", sans-serif;
           font-size: 26px;
           font-weight: 700;
           line-height: 30px;
@@ -284,7 +284,7 @@
           display: none;
 
           h1 {
-            font-family: "Arial",sans-serif;
+            font-family: "Arial", sans-serif;
             font-size: 30px;
             font-weight: 700;
             line-height: 30px;
