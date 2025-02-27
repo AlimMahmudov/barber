@@ -38,7 +38,7 @@ const Service: React.FC<HomeProps> = ({ shaveData, setText2 }) => {
                   backgroundColor: selectedId === el.id ? "#ffa600" : "#fff",
                 }}
               >
-                <Image src={el.image} alt={el.title} />
+                <Image width={100} height={100} src={el.image} alt={el.title} />
                 <h1>{el.title}</h1>
                 <p>{el.price} сом</p>
               </div>
