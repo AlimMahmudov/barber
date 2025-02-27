@@ -46,11 +46,11 @@ const About = () => {
             Мы открылись
 							<span className={scss.span}>
               в 2020 году
-							</span>{" "}
+							</span>
 							в Бишкеке и уверенно
 							<span className={scss.span2}>
               стали лучшими
-							</span>{" "}
+							</span>
 							в этой отрасли.
 						</h2>
 					</div>

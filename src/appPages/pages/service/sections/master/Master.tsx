@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import scss from "./Home.module.scss";
+import Image from "next/image";
 
 interface MasterInter {
   id: number;
@@ -37,7 +38,7 @@ const Master: React.FC<MasterProps> = ({ masterData, setText }) => {
                   backgroundColor: selectedId === el.id ? "#ffa600" : "#fff",
                 }}
               >
-                <img src={el.photo} alt={el.human} />
+                <Image src={el.photo} alt={el.human} />
                 <h1>{el.human}</h1>
                 <p>{el.work}</p>
               </div>

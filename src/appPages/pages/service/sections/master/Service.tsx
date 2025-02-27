@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import scss from "./Home.module.scss";
+import Image from "next/image";
 
 interface ShaveInter {
   id: number;
@@ -37,7 +38,7 @@ const Service: React.FC<HomeProps> = ({ shaveData, setText2 }) => {
                   backgroundColor: selectedId === el.id ? "#ffa600" : "#fff",
                 }}
               >
-                <img src={el.image} alt={el.title} />
+                <Image src={el.image} alt={el.title} />
                 <h1>{el.title}</h1>
                 <p>{el.price} сом</p>
               </div>
