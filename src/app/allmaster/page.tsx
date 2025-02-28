@@ -1,5 +1,5 @@
-import MasterComponent from "@/appPages/pages/master/MasterComponent";
+import MasterComponentPage from "@/appPages/pages/master/MasterComponentPage";
 import React from "react";
 
-const MasterPage = () => <MasterComponent />;
+const MasterPage = () => <MasterComponentPage />;
 export default MasterPage;

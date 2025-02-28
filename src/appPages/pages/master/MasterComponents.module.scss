@@ -1,16 +1,23 @@
 #AllMaster {
   padding-top: 100px;
-  font-family: sans-serif;
   .allmaster {
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    .title {
+      font-family: "Arial", sans-serif;
+      font-size: 41.33px;
+      font-weight: 400;
+      line-height: 49.59px;
+      color: #fff;
+    }
 
     .block {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
+      padding-top: 30px;
 
       .card {
         width: 300px;
@@ -49,7 +56,12 @@
           h1 {
             font-size: 24px;
           }
+          h3 {
+            font-size: 24px;
+            color: #ff8800;
+          }
           h2 {
+            font-size: 20px;
             span {
               color: #6e6e6e;
             }
@@ -58,6 +70,7 @@
           p {
             color: #6e6e6e;
             font-size: 16px;
+            width: 90%;
           }
           button {
             padding: 10px 40px;
@@ -66,6 +79,13 @@
             border-radius: 50px;
             border: none;
             font-size: 20px;
+            transition: 0.3s;
+            font-display: none;
+
+            &:hover {
+              transition: 0.3s;
+              background: #ffd000;
+            }
           }
         }
       }
