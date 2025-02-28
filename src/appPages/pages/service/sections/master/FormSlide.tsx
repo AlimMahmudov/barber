@@ -1,10 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
 import { UseFormRegister, UseFormHandleSubmit } from "react-hook-form";
-import { BsFillSendCheckFill } from "react-icons/bs";
-import { MdClose } from "react-icons/md";
 import scss from "./Home.module.scss";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface IFormTelegram {
   name: string;
@@ -47,6 +45,8 @@ const FormSlide: React.FC<FormSlideProps> = ({
     console.log("Выбранная2:", text2);
   }, [text4]);
 
+  const router = useRouter();
+
   return (
     <div id={scss.Home}>
       <div className="container">
@@ -83,13 +83,9 @@ const FormSlide: React.FC<FormSlideProps> = ({
             </h1>
             <input type="hidden" {...register("day")} />
             <div className={scss.buttons}>
-              <button>
-                <Link href="/">
-                  <MdClose />
-                </Link>
-              </button>
-              <button type="submit">
-                <BsFillSendCheckFill />
+              <button onClick={() => router.push("/")}>отменить</button>
+              <button onClick={() => router.push("/")} type="submit">
+                отправить
               </button>
             </div>
           </form>
