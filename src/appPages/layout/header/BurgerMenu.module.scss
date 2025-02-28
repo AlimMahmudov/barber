@@ -1,77 +1,115 @@
 .burger_menu {
-  position: absolute;
-  top: 89px;
-  right: -300px;
-  width: 270px;
-  height: 270px;
-  // padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px 0 0 20px;
+	position: fixed;
+	top: 0px;
+	right: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: flex-end;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	pointer-events: none;
+	z-index: 10;
 
-  background: rgb(0, 0, 0);
-  backdrop-filter: blur(10px);
-  border: solid rgb(31, 31, 31) 4px;
+	&.active {
+		opacity: 1;
+		pointer-events: auto;
+	}
 
-  transition: 0.5s;
-  color: white;
+	.content {
+		background: white;
+		width: 80%;
+		max-width: 300px;
+		height: 100%;
+		padding: 20px;
+		box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+		transform: translateX(100%);
+		transition: transform 0.5s ease-in-out;
+		z-index: 1000;
 
-  &.active {
-    right: 0px;
-    padding: 20px;
-    color: white;
-  }
-}
+		&.active {
+			transform: translateX(0);
+			z-index: 1000;
+		}
 
-.content {
-  display: flex;
+		.icon {
+			text-align: end;
+		}
 
-  color: white;
+		.nav {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			font-family: sans-serif;
 
-  .nav {
-    color: white;
-    display: flex;
-    flex-direction: column;
+			.link {
+				text-decoration: none;
+				color: black;
+				font-size: 16px;
+				padding: 10px 15px;
+				border-radius: 5px;
+				transition: background 0.3s ease;
 
-    gap: 20px;
-    text-align: start;
+				&:hover {
+					background: rgba(0, 94, 235, 0.1);
+				}
+			}
+		}
 
-    a {
-      // background: red;
-      text-decoration: none;
-      font-size: 20px;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    select {
-      background: #000000bd;
-      width: 100%;
-      border-radius: 10px;
-      color: #ffffff;
-      border: solid #dd9700 3px;
-      font-size: 18px;
-      outline: none;
-      transition: all 0.3s;
+		.buutons {
+			display: flex;
+			gap: 15px;
+			margin-left: 10px;
+			margin-top: 20px;
 
-      &:hover {
-        transition: all 0.3s;
-        background: #dd9700;
-        color: #000;
-      }
+			.btn {
+				border: none;
+				background: none;
+				font-size: 20px;
+				padding: 1px;
+				display: flex;
+				border: solid 1px black;
+				padding: 6px;
+				border-radius: 50%;
+			}
+		}
 
-      option {
-        text-align: center;
-        background: #000000;
-        color: #ffffff;
-        font-size: 16px;
-        border: none;
+		.logo {
+			display: flex;
+			justify-content: start;
+			align-items: start;
+			color: rgb(0, 0, 0);
+			text-decoration: none;
+			font-weight: 700;
+			font-size: 28px;
+			margin-top: 20px;
+		}
 
-        &:checked {
-          background: #dd9700; // Цвет выбранной опции
-        }
-      }
-    }
-  }
+		.buttons {
+			display: flex;
+			gap: 10px;
+			margin-top: 15px;
+
+			a {
+				padding: 8px 15px;
+				border: 2px solid rgb(0, 94, 235);
+				border-radius: 50px;
+				cursor: pointer;
+				font-size: 12px;
+				text-decoration: none;
+				color: rgb(0, 94, 235);
+				transition: all 0.3s ease;
+
+				&:hover {
+					box-shadow: 0 0 10px rgb(0, 94, 235), 0 0 20px rgb(0, 94, 235);
+				}
+
+				&:active {
+					background: rgb(0, 94, 235);
+					color: white;
+				}
+			}
+		}
+	}
 }

@@ -6,31 +6,15 @@ import Link from "next/link";
 import logo from "@/shared/images/logo.svg";
 import { LuPhoneCall } from "react-icons/lu";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { nav_links } from "../data";
+import { CgMenuRight } from "react-icons/cg";
 // import { PHONE_NUMBER_WHATSAPP } from "@/constants/admin";
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const links = [
-    {
-      name: "Главная",
-      link: "/",
-    },
-    {
-      name: "О нас",
-      link: "/about",
-    },
-    {
-      name: "Мастера",
-      link: "/allmaster",
-    },
-    {
-      name: "Записаться",
-      link: "/service",
-    },
-  ];
-
+   
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1000);
     window.addEventListener("resize", handleResize);
@@ -49,7 +33,7 @@ const Header = () => {
               <Image src={logo} alt="img" />
             </Link>
             <div className={scss.nav}>
-              {links.map((item, index) => (
+              {nav_links.map((item, index) => (
                 <Link key={index} href={item.link}>
                   {item.name}
                 </Link>
@@ -60,9 +44,9 @@ const Header = () => {
           {isMobile ? (
             <>
               <button className={scss.bur} onClick={() => setIsOpen(!isOpen)}>
-                <GiHamburgerMenu />
+                <CgMenuRight />
               </button>
-              <BurgerMenu links={links} isOpen={isOpen} />
+              <BurgerMenu links={nav_links} isOpen={isOpen} setIsOpen={setIsOpen}/>
             </>
           ) : (
             <>

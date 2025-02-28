@@ -12,3 +12,16 @@ namespace WATCH {
   type GetResponse = WatchType[];
   type GetRequest = void;
 }
+
+
+
+namespace VIDEO {
+  type GetVideoRes = [
+		{
+			id: number;
+			youtube: string;
+		}
+	];
+
+	type GetVideoReq = void;
+}

@@ -1,0 +1,87 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.map {
+	iframe {
+		width: 100%;
+		height: 420.5px;
+		overflow: hidden;
+		border: none;
+	}
+}
+
+body {
+	background: #000;
+}
+
+button {
+	cursor: pointer;
+}
+
+::-webkit-scrollbar {
+	width: 15px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #00000000;
+}
+
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(to bottom, #dd9700, #dd9700);
+	border-radius: 10px;
+}
+
+.press_service {
+	background: transparent !important;
+	margin-bottom: 12px;
+	border-radius: 8px !important;
+	border: 1px solid #1a1d201f !important;
+	background: rgb(255, 255, 255);
+
+	input {
+		width: 260px;
+		font-size: 16px !important;
+		line-height: 22px !important;
+		font-weight: 400 !important;
+		color: #232d37 !important;
+		background: rgb(255, 255, 255) !important;
+		height: 46px !important;
+		border: none !important;
+		border-top-right-radius: 8px !important;
+		border-bottom-right-radius: 8px !important;
+		overflow: hidden;
+	}
+
+	@media (max-width: "500px") {
+		input {
+			width: 100%;
+		}
+	}
+
+	.react-international-phone-country-selector {
+		button {
+			border-top-left-radius: 8px !important;
+			border-bottom-left-radius: 8px !important;
+			overflow: hidden;
+			height: 100%;
+			width: 59px;
+			background: rgb(255, 255, 255) !important;
+			border: none;
+			padding: 10px;
+		}
+	}
+}

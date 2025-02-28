@@ -1,6 +1,3 @@
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-
 import About from "./sections/about/About";
 import Discount from "./sections/discount/Discount";
 import Hero from "./sections/hero/Hero";
@@ -11,25 +8,18 @@ import Sertifikat from "./sections/sertifikat/Sertifikat";
 import Services from "./sections/services/Services";
 
 const HomePage = () => {
-  // useEffect(() => {
-  //   AOS.init({
-  //     duration: 1000,
-  //     once: true,
-  //   });
-  // }, []);
-
-  return (
-    <div>
-      <Hero />
-      <About />
-      <Master />
-      <Services />
-      <Sertifikat />
-      <Discount />
-      <Review />
-      <Map />
-    </div>
-  );
+	return (
+		<div>
+			<Hero />
+			<About />
+			<Master />
+			<Services />
+			<Sertifikat />
+			<Discount />
+			<Review />
+			<Map />
+		</div>
+	);
 };
 
 export default HomePage;

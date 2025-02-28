@@ -7,6 +7,7 @@ import { GoArrowRight } from "react-icons/go";
 import Link from "next/link";
 import { useGetMasterQuery } from "@/redux/api/master";
 import { useState } from "react";
+import { IoMdClose } from "react-icons/io";
 
 const Master = () => {
   const router = useRouter();
@@ -63,20 +64,20 @@ const Master = () => {
       <div className={scss.modelOkno}>
         {isOpen && (
           <div className={scss.overlay} onClick={() => setIsOpen(false)}>
-            <div className={scss.modal} onClick={(e) => e.stopPropagation()}>
-              <div className={scss.block}>
+            <div className={scss.modal} onClick={() => setIsOpen(false)}>
+              <div className={scss.block}onClick={(e) => e.stopPropagation()}>
                 <button
                   className={scss.closeButton}
                   onClick={() => setIsOpen(false)}
                 >
-                  ✖
+                  <IoMdClose />
                 </button>
-                <h2>Заголовок</h2>
-                <p>Это содержимое модального окна.</p>
+                <h2>Заполни форму</h2>
                 <form className={scss.form}>
-                  <input type="text" placeholder="name" />
-                  <input type="text" placeholder="name" />
-                  <input type="text" placeholder="name" />
+                  <input type="text" placeholder="Имя" />
+                  <input type="text" placeholder="gmail" />
+                  <input type="text" placeholder="номер" />
+
                   <button>ОТПРАВИТЬ</button>
                 </form>
               </div>

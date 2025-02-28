@@ -23,7 +23,14 @@ const api = index.injectEndpoints({
       }),
       providesTags: ["watch"],
     }),
+    getVideo: build.query<VIDEO.GetVideoRes, VIDEO.GetVideoReq>({
+      query: () => ({
+        url: "/video/get-all",
+        method: "GET",
+      }),
+      providesTags: ["video"],  
+    }),
   }),
 });
 
-export const { useGetMasterQuery, useGetShaveQuery, useGetWatchQuery } = api;
+export const { useGetMasterQuery, useGetShaveQuery, useGetWatchQuery,useGetVideoQuery } = api;
