@@ -1,43 +1,17 @@
 "use client";
-import { useRef } from "react";
 import scss from "./Master.module.scss";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
-import barber from "@/shared/images/barber.svg";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { GoArrowRight } from "react-icons/go";
 import Link from "next/link";
 import { useGetMasterQuery } from "@/redux/api/master";
+import { useState } from "react";
 
 const Master = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
   const router = useRouter();
   const { data: masterData } = useGetMasterQuery();
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (scrollRef.current) {
-      isDragging.current = true;
-      startX.current = e.pageX - scrollRef.current.offsetLeft;
-      scrollLeft.current = scrollRef.current.scrollLeft;
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging.current || !scrollRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = x - startX.current;
-    scrollRef.current.scrollLeft = scrollLeft.current - walk;
-  };
-
-  const handleMouseUpOrLeave = () => {
-    isDragging.current = false;
-  };
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div id={scss.Master}>
       <div className="container">
@@ -56,15 +30,7 @@ const Master = () => {
             своего дела.
           </h2>
           <div className={scss.block}>
-            <div
-              data-aos="fade-up"
-              className={scss.review_scroll}
-              ref={scrollRef}
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUpOrLeave}
-              onMouseLeave={handleMouseUpOrLeave}
-            >
+            <div data-aos="fade-up" className={scss.review_scroll}>
               {masterData?.map((el) => (
                 <div key={el.id} className={scss.box}>
                   <div className={scss.box_text}>
@@ -76,11 +42,11 @@ const Master = () => {
                       <FaInstagram />
                     </h2>
                   </div>
-                  <img src={el.photo} alt="img" />
+                  <img src={el.photo} alt="photo" />
                 </div>
               ))}
             </div>
-            <div onClick={() => router.push("/wellcome")} className={scss.want}>
+            <div onClick={() => setIsOpen(true)} className={scss.want}>
               <div className={scss.want_box}>
                 <h1>Хочешь к нам в команду?</h1>
                 <p>
@@ -93,6 +59,30 @@ const Master = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className={scss.modelOkno}>
+        {isOpen && (
+          <div className={scss.overlay} onClick={() => setIsOpen(false)}>
+            <div className={scss.modal} onClick={(e) => e.stopPropagation()}>
+              <div className={scss.block}>
+                <button
+                  className={scss.closeButton}
+                  onClick={() => setIsOpen(false)}
+                >
+                  ✖
+                </button>
+                <h2>Заголовок</h2>
+                <p>Это содержимое модального окна.</p>
+                <form className={scss.form}>
+                  <input type="text" placeholder="name" />
+                  <input type="text" placeholder="name" />
+                  <input type="text" placeholder="name" />
+                  <button>ОТПРАВИТЬ</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 #Master {
   padding: 100px;
+
   .master {
     display: flex;
     flex-direction: column;
@@ -193,6 +194,72 @@
         }
       }
     }
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // justify-content: center;
+      position: relative;
+      padding: 20px;
+      gap: 10px;
+      width: 70%;
+      height: 80%;
+      background: #000;
+      color: #fff;
+      border-radius: 20px;
+      border: solid 1px rgb(255, 255, 255);
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        input {
+          width: 70%;
+          height: 50px;
+          padding: 10px;
+          font-size: 20px;
+          border-radius: 5px;
+          background: none;
+          outline: none;
+          border: solid 3px #dd9700;
+        }
+
+        button {
+          padding: 16px 40px;
+          background: #dd9700;
+          color: #fff;
+          font-size: 20px;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+
+  .closeButton {
+    position: absolute;
+    top: -40px;
+    right: 0px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
   }
 }
 

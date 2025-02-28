@@ -3,6 +3,9 @@ interface MasterType {
   human: string;
   photo: string;
   work: string;
+  rating: string;
+  skills: string;
+  description: string;
 }
 
 interface ShaveType {
