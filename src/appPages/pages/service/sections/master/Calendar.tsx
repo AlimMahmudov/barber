@@ -49,7 +49,7 @@ const MyCustomCalendar = ({ setText4 }: MyCustomCalendarProps) => {
   };
 
   return (
-    <div className="container2">
+    <div className="container">
       <h1>Укажите день</h1>
       <div className="calendar-container">
         <Calendar

@@ -38,13 +38,15 @@ const Master: React.FC<MasterProps> = ({ masterData, setText }) => {
                   backgroundColor: selectedId === el.id ? "#ffa600" : "#fff",
                 }}
               >
-                <Image
-                  quality={100}
-                  width={100}
-                  height={100}
-                  src={el.photo}
-                  alt={el.human}
-                />
+                <div className={scss.image}>
+                  <Image
+                    quality={100}
+                    width={100}
+                    height={100}
+                    src={el.photo}
+                    alt={el.human}
+                  />
+                </div>
                 <h1>{el.human}</h1>
                 <p>{el.work}</p>
               </div>
