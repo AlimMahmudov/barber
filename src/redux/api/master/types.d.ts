@@ -13,15 +13,18 @@ namespace WATCH {
   type GetRequest = void;
 }
 
-
+namespace SERVICE {
+  type GetResponse = ServiceType[];
+  type GetRequest = void;
+}
 
 namespace VIDEO {
   type GetVideoRes = [
-		{
-			id: number;
-			youtube: string;
-		}
-	];
+    {
+      id: number;
+      youtube: string;
+    }
+  ];
 
-	type GetVideoReq = void;
+  type GetVideoReq = void;
 }

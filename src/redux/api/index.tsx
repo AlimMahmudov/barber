@@ -18,6 +18,6 @@ export const api = createApi({
   reducerPath: "api",
   refetchOnFocus: true,
   refetchOnReconnect: false,
-  tagTypes: ["master", "shave", "watch","video"],
+  tagTypes: ["master", "shave", "watch", "video", "service"],
   endpoints: () => ({}),
 });

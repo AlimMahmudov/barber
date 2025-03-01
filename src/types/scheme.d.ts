@@ -19,3 +19,11 @@ interface WatchType {
   id: number;
   oclock: string;
 }
+
+interface ServiceType {
+  id: number;
+  title: string;
+  type: string;
+  time: string;
+  price: string;
+}

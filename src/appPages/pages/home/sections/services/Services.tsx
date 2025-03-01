@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import scss from "./Services.module.scss";
 import axios from "axios";
+import { useGetServiceQuery } from "@/redux/api/master";
 
 interface Service {
   title: string;
@@ -11,26 +12,19 @@ interface Service {
 }
 
 const Services = () => {
+  const { data } = useGetServiceQuery();
+
   const [selectedType, setSelectedType] = useState<string>("Стрижка");
-  const [services, setServices] = useState<Service[]>([]);
-
-  const fetchData = async () => {
-    const { data } = await axios.get(
-      "https://barber-backend-e5nu.onrender.com/service/get-all"
-    );
-    console.log(data);
-    setServices(data);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const handleClick = (type: string) => {
     setSelectedType(type);
   };
 
-  const filteredServices = services.filter((el) => el.type === selectedType);
+  if (!data) {
+    return <p>Загрузка...</p>;
+  }
+
+  const filteredServices = data.filter((el) => el.type === selectedType);
 
   return (
     <div data-aos="fade-up" id={scss.Services}>
@@ -39,7 +33,7 @@ const Services = () => {
           <div className={scss.services_text}>
             <h1>услуги и цены</h1>
             <div className={scss.buttons}>
-              {Array.from(new Set(services.map((el) => el.type))).map(
+              {Array.from(new Set(data.map((el) => el.type))).map(
                 (type, index) => (
                   <button
                     key={index}
